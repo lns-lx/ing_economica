@@ -15,7 +15,8 @@ def Anualidad_vencida():
                 n = float(input("Ingrese el numero de periodos: "))
                 sub_i = (i/100)/12 # tasa de interes mensual y en decimal
                 vp = A*((1-(1+sub_i)**(-n))/sub_i) # valor presente
-                resultado = round(vp, 2)
+                resultado = round(vp, 2) # redondear a 2 decimales
+                # \033[1;31m es para poner el texto en rojo del codigo ANSI
                 print("\n\033[1;31m El valor presente es: ", resultado, "\033[0m")
                 valor_presente()
             elif opcion == 2:
