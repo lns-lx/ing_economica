@@ -1,4 +1,3 @@
-
 def gradiente_aritmetico():
     def valor_presente():
         A = float(input("Ingrese el valor de la anualidad: "))
@@ -6,7 +5,6 @@ def gradiente_aritmetico():
         n = float(input("Ingrese el numero de periodos: "))
         G = float(input("Ingrese el valor del gradiente: "))
         sub_i = (i/100)
-        #vp = A*(((1+i)**(n))/())+(G/sub_i)*((()/())-(()/()))
         vp=A*((((1+sub_i)**n)-1)/(sub_i*(1+sub_i)**n))+(G/sub_i)*(((((1+sub_i)**n)-1)/(sub_i*((1+sub_i)**n)))-(n/(1+sub_i)**n))
         resultado = round(vp, 2)
         print("\n\033[1;31m El valor presente es: ", resultado, "\033[0m")
@@ -72,10 +70,6 @@ def gradiente_geometrico():
         else:
             print("Opcion no valida")
 def Menu_gradientes():
-    print("")
-    print("Programa en construccion xd")
-    print("Regresando al menu anterior")
-    print("")
     while True:
         print("\n--- Gradientes ---")
         print("1. Gradiente aritmetico")
