@@ -1,5 +1,8 @@
 def gradiente_aritmetico():
     def valor_presente():
+        while True:
+            print('\n--- Gradiente aritmetico - Valor presente ---')
+            print('Creciente')
         A = float(input("Ingrese el valor de la anualidad: "))
         i = float(input("Ingrese el valor de la tasa de interes: "))
         n = float(input("Ingrese el numero de periodos: "))
@@ -19,17 +22,50 @@ def gradiente_aritmetico():
         resultado = round(vf, 2)
         print("\n\033[1;31m El valor futuro es: ", resultado, "\033[0m")
         gradiente_aritmetico()
+    def cuota_n():
+        def creciente():
+            A = float(input("Ingrese el valor de la anualidad: "))
+            n = float(input("Ingrese el numero de periodos: "))
+            G = float(input("Ingrese el valor del gradiente: "))
+            c_n = A + (n - 1) * G
+            print('\n\033[1;31m Cuota n creciente es: ', c_n, '\033[0m')
+        def decreciente():
+            A = float(input("Ingrese el valor de la anualidad: "))
+            n = float(input("Ingrese el numero de periodos: "))
+            G = float(input("Ingrese el valor del gradiente: "))
+            c_n = A - (n - 1) * G
+            print('\n\033[1;31m Cuota n decreciente es: ', c_n, '\033[0m')
+        
+        while True:
+            print('\n--- Gradiente aritmetico - cuota n ---')
+            print('1. Creciente')
+            print('2. Decreciente')
+            print('3. Regresar al menu anterior\n')
+            opcion = int(input('Ingrese una opcion: '))
+            if opcion == 1:
+                creciente()
+            elif opcion == 2:
+                decreciente()
+            elif opcion == 3:
+                break
+            else:
+                print('Opcion no valida')
     while True:
         print("\n--- Gradiente aritmetico ---")
-        print("1. Hallar el valor valor presente teniendo la anualidad")
-        print("2. Hallar la anualidad teniendo el valor presente")
-        print("3. Regresar al menu anterior\n")
+        print('1. Valor presente')
+        print('2. Valor futuro')
+        print('3. Cuota n')
+        #print("1. Hallar el valor valor presente teniendo la anualidad")
+        #print("2. Hallar la anualidad teniendo el valor presente")
+        print("4. Regresar al menu anterior\n")
         opcion = int(input("Ingrese una opcion: "))
         if opcion == 1:
             valor_presente()
         elif opcion == 2:
             valor_futuro()
         elif opcion == 3:
+            cuota_n()
+        elif opcion == 4:
             break
         else:
             print("Opcion no valida")
