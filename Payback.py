@@ -11,7 +11,7 @@ def Payback_contable():
         Payback += Beneficios[i]
         if Payback >= Inversion_inicial:
             break
-    print("El Payback Contable es: ",i+1)
+    print("El Payback Contable es: ",i+1,"años")
 
 def Payback_descontado():
     n_periodos=int(input("Ingrese el numero de periodos: "))
@@ -25,7 +25,7 @@ def Payback_descontado():
         Payback += Beneficios[i]/(1+Interes)**i
         if Payback >= Inversion_inicial:
             break
-    print("El Payback Descontado es: ",i+1)
+    print("El Payback Descontado es: ",i+1, "años")
     return i+1
     
 
