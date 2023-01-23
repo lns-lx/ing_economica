@@ -8,7 +8,7 @@ def gradiente_aritmetico():
         vp=A*((((1+sub_i)**n)-1)/(sub_i*(1+sub_i)**n))+(G/sub_i)*(((((1+sub_i)**n)-1)/(sub_i*((1+sub_i)**n)))-(n/(1+sub_i)**n))
         resultado = round(vp, 2)
         print("\n\033[1;31m El valor presente es: ", resultado, "\033[0m")
-        valor_presente()
+        gradiente_aritmetico()
     def valor_futuro():
         A = float(input("Ingrese el valor de la anualidad: "))
         i = float(input("Ingrese el valor de la tasa de interes: "))
@@ -18,7 +18,7 @@ def gradiente_aritmetico():
         vf=A*((((1+sub_i)*n)-1)/(sub_i(1+sub_i)*n))+G/sub_i(((((1+sub_i)*n)-1)/(sub_i(1+sub_i)**n))-(n/(1+sub_i)**n))
         resultado = round(vf, 2)
         print("\n\033[1;31m El valor futuro es: ", resultado, "\033[0m")
-        valor_futuro()
+        gradiente_aritmetico()
     while True:
         print("\n--- Gradiente aritmetico ---")
         print("1. Hallar el valor valor presente teniendo la anualidad")
