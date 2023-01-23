@@ -8,8 +8,8 @@ def VAN():
     for i in range(len(Beneficios)):
         VAN += Beneficios[i]/(1+Interes)**i
     
-    print("El Valor Actual Neto es: ",VAN)
-    return VAN
+    a=print("El Valor Actual Neto es VAN: ",VAN)
+    return a
 
 def Menu_VAN():
     while True:
