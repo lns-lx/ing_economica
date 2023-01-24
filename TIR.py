@@ -1,5 +1,4 @@
 def tir(cf, low=0, high=1, epsilon=0.01):
-   
     while abs(high - low) > epsilon:
         mid = (low + high) / 2.0
         npv_low = sum([cf[i] / ((1 + low) ** (i+1)) for i in range(len(cf))])

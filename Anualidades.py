@@ -1,3 +1,5 @@
+from Conversor_cuotas import Menu_conversor
+
 #### Anualidad vencida
 def Anualidad_vencida():
     def valor_presente():
@@ -13,7 +15,7 @@ def Anualidad_vencida():
                 i = float(input("Ingrese el valor de la tasa de interes: "))
                 print("## Convierta el periodo a meses si esta en años ##")
                 n = float(input("Ingrese el numero de periodos: "))
-                sub_i = (i/100)/12 # tasa de interes mensual y en decimal
+                sub_i = (i/100) # tasa de interes mensual y en decimal
                 vp = A*((1-(1+sub_i)**(-n))/sub_i) # valor presente
                 resultado = round(vp, 2) # redondear a 2 decimales
                 # \033[1;31m es para poner el texto en rojo del codigo ANSI
@@ -25,7 +27,7 @@ def Anualidad_vencida():
                 i = float(input("Ingrese el valor de la tasa de interes: "))
                 print("## Convierta el periodo a meses si esta en años ##")
                 n = float(input("Ingrese el numero de periodos: "))
-                sub_i = (i/100)/12 # tasa de interes mensual y en decimal
+                sub_i = (i/100) # tasa de interes mensual y en decimal
                 A = (sub_i*vp)/(1-(1+sub_i)**(-n)) # anualidad
                 resultado = round(A, 2)
                 print("\n\033[1;31m La anualidad es: ", resultado, "\033[0m")
@@ -49,7 +51,7 @@ def Anualidad_vencida():
                 i = float(input("Ingrese el valor de la tasa de interes: "))
                 print("## Convierta el periodo a meses si esta en años ##")
                 n = float(input("Ingrese el numero de periodos: "))
-                sub_i = (i/100)/12 # tasa de interes mensual y en decimal
+                sub_i = (i/100) # tasa de interes mensual y en decimal
                 vf = A*((((1+sub_i)**(n))-1)/sub_i) # valor futuro
                 resultado = round(vf, 2)
                 print("\n\033[1;31m El valor futuro es: ", resultado, "\033[0m")
@@ -60,7 +62,7 @@ def Anualidad_vencida():
                 i = float(input("Ingrese el valor de la tasa de interes: "))
                 print("## Convierta el periodo a meses si esta en años ##")
                 n = float(input("Ingrese el numero de periodos: "))
-                sub_i = (i/100)/12 # tasa de interes mensual y en decimal
+                sub_i = (i/100) # tasa de interes mensual y en decimal
                 A = (sub_i*vf)/((1+sub_i)**(n)-1) # anualidad
                 resultado = round(A, 2)
                 print("\n\033[1;31m La anualidad es: ", resultado, "\033[0m")
@@ -101,7 +103,7 @@ def Anualidad_anticipada():
                 i = float(input("Ingrese el valor de la tasa de interes: "))
                 print("## Convierta el periodo a meses si esta en años ##")
                 n = float(input("Ingrese el numero de periodos: "))
-                sub_i = (i/100)/12 # tasa de interes mensual y en decimal
+                sub_i = (i/100) # tasa de interes mensual y en decimal
                 vp = A*(1+((1-(1+sub_i)**(-(n-1)))/(sub_i)))
                 resultado = round(vp, 2) # redondeo a 2 decimales
                 print("\n\033[1;31m El valor presente es: ", resultado, "\033[0m")
@@ -112,7 +114,7 @@ def Anualidad_anticipada():
                 i = float(input("Ingrese el valor de la tasa de interes: "))
                 print("## Convierta el periodo a meses si esta en años ##")
                 n = float(input("Ingrese el numero de periodos: "))
-                sub_i = (i/100)/12 # tasa de interes mensual y en decimal
+                sub_i = (i/100) # tasa de interes mensual y en decimal
                 A = (vp/(1+((1-((1+sub_i)**(-(n-1))))/(sub_i))))
                 resultado = round(A, 2)
                 print("\n\033[1;31m La anualidad es: ", resultado, "\033[0m")
@@ -136,7 +138,7 @@ def Anualidad_anticipada():
                 i = float(input("Ingrese el valor de la tasa de interes: "))
                 print("## Convierta el periodo a meses si esta en años ##")
                 n = float(input("Ingrese el numero de periodos: "))
-                sub_i = (i/100)/12
+                sub_i = (i/100)
                 vf = A*(((((1+sub_i)**(n+1))-1)/(sub_i))-1)
                 resultado = round(vf, 2)
                 print("\n\033[1;31m El valor futuro es: ", resultado, "\033[0m")
@@ -147,7 +149,7 @@ def Anualidad_anticipada():
                 i = float(input("Ingrese el valor de la tasa de interes: "))
                 print("## Convierta el periodo a meses si esta en años ##")
                 n = float(input("Ingrese el numero de periodos: "))
-                sub_i = (i/100)/12
+                sub_i = (i/100)
                 A = vf/(((((1+sub_i)**(n+1))-1)/(sub_i))-1)
                 resultado = round(A, 2)
                 print("\n\033[1;31m La anualidad es: ", resultado, "\033[0m")
@@ -175,19 +177,25 @@ def Anualidad_anticipada():
 
 #### Anualidad diferida
 def Anualidad_diferida():
-    R = float(input("Ingrese el valor de la Renta: "))
+    A = float(input("Ingrese el valor de la anualidad: "))
     i = float(input("Ingrese el valor de la tasa de interes: "))
-    k = float(input("Ingrese el numero de plazo de anualidad: "))
     n = float(input("Ingrese el numero de periodos: "))
-    vp = R*(1+i)**(-k)((1-(1+i)**(-n))/i)
-    return vp
-
+    sub_i = i/100
+    vp = A*((1-(1+sub_i)**(-n))/sub_i) # valor presente
+    print(f' El valor presente es: {vp:.2f}')
+    interes_c = vp/((1+sub_i)**1) # interes compuesto
+    resultado = round(interes_c, 2)
+    print("\n\033[1;31m La anualidad diferida es: ", resultado, "\033[0m")
+    Menu_anualidades()
 #### Anualidad perpetua
 def Anualidad_perpetua():
     A = float(input("Ingrese el valor de la anualidad: "))
     i = float(input("Ingrese el valor de la tasa de interes: "))
-    vp = A/i
-    return vp
+    sub_i = i/100
+    vp = A/sub_i
+    resultado = round(vp, 2)
+    print("\n\033[1;31m El valor presente es: ", resultado, "\033[0m")
+    Menu_anualidades()
 
 def Menu_anualidades():
     while True:
@@ -202,11 +210,9 @@ def Menu_anualidades():
         elif opcion == 2:
             Anualidad_anticipada()
         elif opcion == 3:
-            resultado = round(Anualidad_diferida(), 2)
-            print("El valor presente es: ", resultado)
+            Anualidad_diferida()
         elif opcion == 4:
-            resultado = round(Anualidad_perpetua(), 2)
-            print("El valor presente es: ", resultado)
+            Anualidad_perpetua()
         elif opcion == 5:
             break
         else:
