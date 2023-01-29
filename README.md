@@ -9,6 +9,10 @@
 
 En el directorio, puede ejecutar:
 
-### `python Main.py`
+```sh
+python Main.py
+```
 ó
-### `py Main.py`
+```sh
+py Main.py
+```

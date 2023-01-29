@@ -24,35 +24,30 @@ def Menu_conversor():
         print('\n--- Tipo de capitalizacion ---')
         print('1. Anual')
         print('2. Semestral')
-        print('3. Cuatrimestral')
-        print('4. Cuatrimestral')
-        print('5. Trimestral')
-        print('6. Bimestral')
-        print('7. Mensual')
-        print('8. Quincenal')
-        print('9. Regresar al menu anterior\n')
+        print('3. Trimestral')
+        print('4. Bimestral')
+        print('5. Mensual')
+        print('6. Quincenal')
+        print('7. Regresar al menu anterior\n')
         opcion = int(input('Ingrese opcion: '))
+        n = float(input("Ingrese el valor a convertir: "))
         if opcion == 1:
-            Anual()
+            result = Anual(n)
         elif opcion == 2:
-            Semestral()
+            result = Semestral(n)
         elif opcion == 3:
-            Cuatrimestral()
+            result = Trimestral(n)
         elif opcion == 4:
-            Cuatrimestral()
+            result = Bimestral(n)
         elif opcion == 5:
-            Trimestral()
+            result = Mensual(n)
         elif opcion == 6:
-            Bimestral()
+            result = Quincenal(n)
         elif opcion == 7:
-            Mensual()
-        elif opcion == 8:
-            Quincenal()
-        elif opcion == 9:
             break
         else:
             print('Opcion no valida')
+        print("Resultado:", result)
 
 if __name__ == "__main__":
     Menu_conversor()
-
