@@ -25,7 +25,9 @@ def Payback_descontado():
         Payback += Beneficios[i]/(1+Interes)**i
         if Payback >= Inversion_inicial:
             break
+    
     print("El Payback Descontado es: ",i+1, "años")
+    # devuelve el numero de años
     return i+1
     
 
@@ -33,7 +35,7 @@ def Menu_payback():
     while True:
         print("\n1. Calcular Payback Contable")
         print("2. Calcular Payback Descontado")
-        print("3. Regresar al menu principal\n")
+        print("3. Regresar al menu menu anterior\n")
         opcion = int(input("Ingrese una opcion: "))
         if opcion == 1:
             Payback_contable()
