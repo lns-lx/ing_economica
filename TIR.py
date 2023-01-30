@@ -15,11 +15,11 @@ def Menu_TIR():
         print("2. Regresar al menu principal\n")
         opcion = int(input("Ingrese una opcion: "))
         if opcion == 1:
-            num_periods = int(input("Ingrese el número de flujos de caja: "))
-            cash_flow = []
-            for i in range(num_periods):
-                cash_flow.append(float(input("Ingrese el flujo de caja para el período {}: ".format(i+1))))
-            r = tir(cash_flow)
+            num_periodos = int(input("Ingrese el número de flujos de caja: "))
+            flujo_e = []
+            for i in range(num_periodos):
+                flujo_e.append(float(input("Ingrese el flujo de caja para el período {}: ".format(i+1))))
+            r = tir(flujo_e)
             print(f"La Tasa Interna de Retorno (TIR) es: {r:.2f}")
         elif opcion == 2:
             break
