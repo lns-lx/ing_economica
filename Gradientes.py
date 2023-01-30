@@ -2,8 +2,8 @@ def gradiente_aritmetico():
     def valor_presente():
         while True:
             print('\n--- Gradiente aritmetico - Valor presente ---')
-            print('1. Creciente (Si la gradiente aumenta)')
-            print('2. Decreciente (Si la gradiente disminuye)')
+            print('1. Creciente (Si la gradiente disminuye)')
+            print('2. Decreciente (Si la gradiente aumenta)')
             print('3. Regresar al menu anterior\n')
             opcion = int(input('Ingrese opcion: '))
             if opcion == 1:
@@ -33,8 +33,8 @@ def gradiente_aritmetico():
     def valor_futuro():
         while True:
             print('\n--- Gradiente aricmetico - valor futuro ---')
-            print('1. Creciente (Si la gradiente aumenta)')
-            print('2. Decreciente (Si la gradiente disminuye)')
+            print('1. Creciente (Si la gradiente disminuye)')
+            print('2. Decreciente (Si la gradiente aumenta)')
             print('3. Regresar al menu anterior\n')
             opcion = int(input('Ingrese opcion: '))
             if opcion == 1:
@@ -79,8 +79,8 @@ def gradiente_aritmetico():
             print('\n\033[1;32m Cuota n decreciente es: ', c_n, '\033[0m')
         while True:
             print('\n--- Gradiente aritmetico - cuota n ---')
-            print('1. Creciente (Si la gradiente aumenta)')
-            print('2. Decreciente (Si la gradiente disminuye)')
+            print('1. Creciente (Si la gradiente disminuye)')
+            print('2. Decreciente (Si la gradiente aumenta)')
             print('3. Regresar al menu anterior\n')
             opcion = int(input('Ingrese una opcion: '))
             if opcion == 1:
@@ -112,8 +112,8 @@ def gradiente_geometrico():
     def valor_presente():
         while True:
             print('\n--- Gradiente geometrico - Valor presente ---')
-            print('1. Creciente (Si la gradiente aumenta)')
-            print('2. Decreciente (Si la gradiente disminuye)')
+            print('1. Creciente (Si la gradiente disminuye)')
+            print('2. Decreciente (Si la gradiente aumenta)')
             print('3. Regresar al menu anterior\n')
             opcion = int(input('Ingrese opcion: '))
             if opcion == 1:
@@ -147,8 +147,8 @@ def gradiente_geometrico():
     def valor_futuro():
         while True:
             print('\n--- Gradiente geometrica - valor futuro ---')
-            print('1. Creciente (Si la gradiente aumenta)')
-            print('2. Decreciente (Si la gradiente disminuye)')
+            print('1. Creciente (Si la gradiente disminuye)')
+            print('2. Decreciente (Si la gradiente aumenta)')
             print('3. Regresar al menu anterior\n')
             opcion = int(input('Ingrese opcion: '))
             if opcion == 1:
@@ -196,8 +196,8 @@ def gradiente_geometrico():
         
         while True:
             print('\n--- Gradiente aritmetico - cuota n ---')
-            print('1. Creciente (Si la gradiente aumenta)')
-            print('2. Decreciente (Si la gradiente disminuye)')
+            print('1. Creciente (Si la gradiente disminuye)')
+            print('2. Decreciente (Si la gradiente aumenta)')
             print('3. Regresar al menu anterior\n')
             opcion = int(input('Ingrese una opcion: '))
             if opcion == 1:
