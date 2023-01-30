@@ -7,7 +7,9 @@ from Punto_equilibrio import Menu_punto_equilibrio
 
 print("_____________________________________________________________")
 print("_______Bienvenido al programa de calculo financiero__________")
-print()
+print("\nIntegrantes:")
+print("- Rossbel Huaylla Huillca - 183067")
+print("- Ruth Margot Llasa Yucra - 191892\n")
 def main():
     while True:
         print("1. Anualidades")
