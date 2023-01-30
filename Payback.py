@@ -1,35 +1,39 @@
-
+import functools as ft
+import math as mt
 def Payback_contable():
-    n_periodos=int(input("Ingrese el numero de periodos: "))
-    Beneficios=[]
-    for i in range(n_periodos):
-        Beneficios.append(float(input("Ingrese el flujo de caja "+str(i+1)+": ")))
-
-    Inversion_inicial=float(input("Ingrese la inversion inicial: "))
-    Payback = 0
-    for i in range(len(Beneficios)):
-        Payback += Beneficios[i]
-        if Payback >= Inversion_inicial:
+    inv = float(input('Ingrese el monto de la inversión inicial: '))
+    flujo_e = [float(x) for x in input('Ingrese los flujos de efectivo para cada año separados por espacios: ').split(' ')]
+    acumulativo = []
+    i = 0
+    while i < len(flujo_e):
+        acumulativo.append(sum(flujo_e[:i+1]))
+        if acumulativo[i] >= inv:
+            year = i + (inv - sum(flujo_e[:i])) / flujo_e[i]
             break
-    print("El Payback Contable es: ",i+1,"años")
+        i += 1
+    b= print("El número de años que se tardará en recuperar la inversión inicial es {} años".format(round(year, 2)))
+    return b
 
 def Payback_descontado():
-    n_periodos=int(input("Ingrese el numero de periodos: "))
-    Beneficios=[]
-    for i in range(n_periodos):
-        Beneficios.append(float(input("Ingrese el flujo de caja "+str(i+1)+": ")))
-    Inversion_inicial=float(input("Ingrese la inversion inicial: "))
-    Interes=float(input("Ingrese el interes: "))
-    Payback = 0
-    for i in range(len(Beneficios)):
-        Payback += Beneficios[i]/(1+Interes)**i
-        if Payback >= Inversion_inicial:
-            break
-    
-    print("El Payback Descontado es: ",i+1, "años")
-    # devuelve el numero de años
-    return i+1
-    
+    inv=float(input('Ingrese el monto de la inversión inicial:'))
+    flujo_e=[float(x) for x in input('Ingrese los flujos de efectivo para cada año separados por espacios: ').split(' ')]
+    desc_flujo=[x for x in range(0,len(flujo_e))]
+    desc_tasa=float(input("Introducir tasa de descuento:"))
+    dif=[]
+    acumulativo=[]
+    i=0
+    while i<len(flujo_e):
+        desc_flujo[i]=flujo_e[i]/pow(1+(desc_tasa/100),i+1)
+        dif.append(inv-ft.reduce(lambda x,y:x+y,desc_flujo))
+        acumulativo.append(ft.reduce(lambda x,y:x+y,desc_flujo))
+        i+=1
+        dif=list(map(lambda x:x>=0,dif))
+        def minimum(lst):
+            i=lst.index(min(lst))
+            return i+1
+        year=minimum(dif)+(inv-acumulativo[minimum(dif)-1])/desc_flujo[minimum(dif)-1]
+    a=print("El número de años que se tardará en recuperar la inversión inicial es {} años".format(round(year,2)))
+    return a 
 
 def Menu_payback():
     while True:
