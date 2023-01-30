@@ -183,7 +183,8 @@ def gradiente_geometrico():
             A = float(input("Ingrese el valor de la anualidad: "))
             n = float(input("Ingrese el numero de periodos: "))
             G = float(input("Ingrese el valor del gradiente: "))
-            c_n = A * ((1 + G)**(n-1)) # cuota n
+            sub_G = G/100
+            c_n = A * ((1 + sub_G)**(n-1)) # cuota n
             resultado = round(c_n, 2)
             print('\n\033[1;32m Cuota n creciente es: ', resultado, '\033[0m')
         def decreciente():
@@ -191,13 +192,15 @@ def gradiente_geometrico():
             A = float(input("Ingrese el valor de la anualidad: "))
             n = float(input("Ingrese el numero de periodos: "))
             G = float(input("Ingrese el valor del gradiente: "))
-            c_n = A * ((1 - G)**(n-1)) # cuota n
-            print('\n\033[1;32m Cuota n decreciente es: ', c_n, '\033[0m')
+            sub_G = G/100
+            c_n = A * ((1 - sub_G)**(n-1)) # cuota n
+            resultado = round(c_n, 2)
+            print('\n\033[1;32m Cuota n decreciente es: ', resultado, '\033[0m')
         
         while True:
             print('\n--- Gradiente aritmetico - cuota n ---')
-            print('1. Creciente (Si la gradiente disminuye)')
-            print('2. Decreciente (Si la gradiente aumenta)')
+            print('1. Creciente (Si la gradiente aumenta)')
+            print('2. Decreciente (Si la gradiente disminuye)')
             print('3. Regresar al menu anterior\n')
             opcion = int(input('Ingrese una opcion: '))
             if opcion == 1:
