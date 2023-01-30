@@ -3,12 +3,13 @@ def VAN():
     Beneficios=[]
     for i in range(n_periodos):
         Beneficios.append(float(input("Ingrese el beneficio del periodo "+str(i+1)+": ")))
-    Interes=float(input("Ingrese el interes: "))
+    Interes=float(input("Ingrese el interes en %: "))
+    sub_interes=Interes/100
     VAN = 0
     for i in range(len(Beneficios)):
-        VAN += Beneficios[i]/(1+Interes)**i
+        VAN += Beneficios[i]/(1+sub_interes)**i
     
-    a=print("El Valor Actual Neto es VAN: ",VAN)
+    a=print("El Valor Actual Neto es VAN: ",round(VAN,2))
     return a
 
 def Menu_VAN():
